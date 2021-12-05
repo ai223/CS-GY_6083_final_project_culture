@@ -57,7 +57,7 @@ except:
 if table_name:
     f"Display the table"
 
-    sql_table = f"SELECT * FROM {table_name};"
+    sql_table = f"SELECT * FROM culture.{table_name};"
     try:
         df = query_db(sql_table)
         st.dataframe(df)
