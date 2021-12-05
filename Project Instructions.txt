@@ -1,0 +1,9 @@
+Net ID Password: N11778890
+
+To Copy Files from ../Project
+
+$ scp -r ./Project/ ai1221@jedi.poly.edu:~/
+
+To SSH with port forwarding
+
+$ ssh ai1221@jedi.poly.edu -L 8621:localhost:8621
