@@ -13,10 +13,16 @@ $ scp -r ~/eclipse-workspace/Lyrics/CS-GY_6083_final_project_culture/main/ ai122
 $ scp -r <file-path>/main/ ai1221@jedi.poly.edu:~
 
 =================================
-To SSH WITH PORT FORWARDING
+TO SSH WITH PORT FORWARDING
 =================================
 
 $ ssh ai1221@jedi.poly.edu -L 8621:localhost:8621
+
+=================================
+TO RUN STREAMLIT
+=================================
+
+streamlit run culture_db.py --server.address=localhost --server.port=8621
 
 =================================
 COPYING INGEST FILE TO LOCAL
