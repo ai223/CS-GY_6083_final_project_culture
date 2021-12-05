@@ -1,9 +1,25 @@
+=================================
+CREDENTIALS
+=================================
+
+Net ID: ai1221
 Net ID Password: N11778890
 
-To Copy Files from ../Project
+=================================
+TO COPY FILES FROM ../main
+=================================
 
-$ scp -r ./Project/ ai1221@jedi.poly.edu:~/
+$ scp -r ~/eclipse-workspace/Lyrics/CS-GY_6083_final_project_culture/main/ ai1221@jedi.poly.edu:~
+$ scp -r <file-path>/main/ ai1221@jedi.poly.edu:~
 
-To SSH with port forwarding
+=================================
+To SSH WITH PORT FORWARDING
+=================================
 
 $ ssh ai1221@jedi.poly.edu -L 8621:localhost:8621
+
+=================================
+COPYING INGEST FILE TO LOCAL
+=================================
+
+scp ai1221@jedi.poly.edu:/home/ai1221/main/ingest_data.sh .
