@@ -100,7 +100,9 @@ if borough:
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
-"## Query 2: Find all museums in which an artists work appears, along with the number of works and their average"
+f"""## Query 2: Find all museums in which an artists work appears, 
+       along with the number of works and their average, as well as the earliest 
+       and latest dates their work appears"""
 
 sql_all_creators = "SELECT name FROM culture.MuseumObjectCreator ORDER BY name;"
 try:
@@ -132,5 +134,33 @@ if creator:
 	try:
 		museums_by_artist = query_db(sql_all_museums_by_creator)
 		st.dataframe(museums_by_artist)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
+
+f"""## Query 3: Allow a user to search for artworks starting with the search term displaying the piece, the creator of the piece, the museum where it can be found and other data"""
+
+artwork_stem = st.text_input('Input your sentence here:') 
+
+if artwork_stem:
+	f"Display the result"
+
+	sql_find_artworks_by_name = f"""
+		SELECT MO.name piece, MOC.name artist, MO.type, MO.style, 
+		       MO.date, MO.country, MO.popularityRank, M.name museum,
+		       L.borough
+		FROM culture.has_object_MuseumObject MO,
+		     culture.MuseumObjectCreator MOC,
+		     culture.created_by CB,
+		     culture.located_at_Museum M,
+		     culture.Location L
+		WHERE MO.name LIKE '{artwork_stem}%'
+		AND MO.moid = CB.moid
+		AND CB.mocid = MOC.mocid
+		AND MO.mid = M.mid
+		AND M.lid = L.lid;"""
+
+	try:
+		matching_artworks = query_db(sql_find_artworks_by_name)
+		st.dataframe(matching_artworks)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
