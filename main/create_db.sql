@@ -46,7 +46,7 @@ create table culture.has_object_MuseumObject(
 	style			varchar(64),
 	date			integer,
 	country		varchar(64),
-	popularityRank	integer,
+	popularityRank	decimal,
 	mid			integer 	not null,
 	foreign key (mid) references culture.located_at_Museum(mid)
 );
@@ -61,7 +61,7 @@ create table culture.MuseumObjectCreator(
 );
 
 create table culture.created_by(
-	moid		integer,
+	moid			integer,
 	mocid 		integer,
 	primary key (moid, mocid),
 	foreign key (moid) references culture.has_object_MuseumObject(moid),
@@ -70,12 +70,12 @@ create table culture.created_by(
 
 create table culture.MuseumEvent(
 	meid		integer		primary key,
-	url			varchar(128),
+	url		varchar(128),
 	name		varchar(64),
 	startDate	timestamp,
-	endDate		timestamp,
+	endDate	timestamp,
 	price		decimal,
-	subject		varchar(256)
+	subject	varchar(256)
 );
 
 create table culture.has_event(

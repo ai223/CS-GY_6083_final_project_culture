@@ -1,66 +1,66 @@
 moid,name,type,style,date,country,popularityRank,mid
-50,Water Lilies,Painting,Impressionism,1983,France,9,1017
-51,Ile aux Fleurs near Vetheuil,Painting,Impressionism,1956,France,10,1017
-52,Camille Monet on a Garden Bench,Painting,Impressionism,2002,France,4,1059
-53,Poppy Fields,Painting,Impressionism,2001,France,8,1059
-54,Camille Monet in the Garden at Argenteuil,Painting,Impressionism,2000,France,6,1059
-55,The Stroller,Painting,Impressionism,2003,France,4,1074
-56,The Path through Irises,Painting,Impressionism,2001,France,8,1074
-57,Water Lilies,Painting,Impressionism,1998,France,4,1074
-58,Jean Monet on His Hobby Horse,Painting,Impressionism,2000,France,7,1099
-59,The Manneporte,Painting,Impressionism,1951,France,1,1099
-60,Houses on the Achterzaan,Painting,Impressionism,1975,France,5,1099
-61,Arlesienne Madame Joseph Michel Ginoux,Painting,Post-Impressionism,1951,Dutch,7,1059
-62,Oleanders,Painting,Post-Impressionism,1962,Dutch,10,1059
-63,Peasant Woman Cooking by a Fireplace,Painting,Post-Impressionism,1984,Dutch,5,1059
-64,Self-Portrait with a Straw Hat,Painting,Post-Impressionism,1967,Dutch,4,1074
-65,Shoes,Painting,Post-Impressionism,1992,Dutch,3,1074
-66,Roses,Painting,Post-Impressionism,1993,Dutch,9,1074
-67,Wheat Field with Cypresses,Painting,Post-Impressionism,1993,Dutch,9,1074
-68,The Adoration of the Magi,Painting,Renaissance,1315,Italian,9,1059
-69,Hercules and Cacus,Statuette group,Renaissance,1550,Italian,6,1059
-70,Samson and the Philistines,Statuette group,Renaissance,1545,Italian,2,1059
-71,The Day,Statuette,Renaissance,1595,Italian,5,1059
-72,Studies for the Libyan Sibyl,Drawing,Renaissance,1511,Italian,10,1059
-73,The Last Judgment,Drawing,Renaissance,1570,Italian,2,1096
-74,Anatomical Studies of a Leg,Drawing,Renaissance,1475,Italian,7,1069
-75,A Figure and Some Architectural Details,Drawing,Renaissance,1475,Italian,5,1034
-76,Anatomical Study of a Knee,Drawing,Renaissance,1475,Italian,1,1034
-77,Sketches of a Funeral Monument,Drawing,Renaissance,1490,Italian,6,1017
-78,Architectural Study,Drawing,Renaissance,1485,Italian,4,1021
-79,Study of Figures from Michelangelos Last Judgment,Drawing,Renaissance,1540,Italian,7,1061
-80,Denial of Saint Peter,Print,Baroque,1603,Italian,3,1034
-81,The Musicians,Painting,Baroque,1597,Italian,4,1059
-82,The Denial of Saint Peter,Painting,Baroque,1610,Italian,8,1059
-83,Allegory of the Catholic Faith,Painting,Baroque,1670,Dutch,7,1059
-84,A Maid Asleep,Painting,Baroque,1656,Dutch,8,1034
-85,Study of a Young Woman,Painting,Baroque,1665,Dutch,4,1034
-86,Young Woman with a Lute,Painting,Baroque,1662,Dutch,5,1034
-87,Young Woman with a Water Pitcher,Painting,Baroque,1657,Dutch,7,1096
-88,A Young Woman Reading,Painting,Baroque,1667,Dutch,9,1021
-89,Compositional Sketches for the Virgin Adoring the Christ Child,Drawing,Renaissance,1480,Italian,9,1024
-90,The Head of the Virgin in Three Quarter View Facing Right,Drawing,Renaissance,1510,Italian,2,1024
-91,The Head of a Grotesque Man in Profile Facing Right,Drawing,Renaissance,1500,Italian,9,1059
-92,Head of a Man in Profile Facing to the Left,Drawing,Renaissance,1490,Italian,7,1061
-93,Allegory on the Fidelity of the Lizard,Drawing,Renaissance,1496,Italian,1,1061
-94,Studies for Hercules Holding a Club Seen in Frontal View,Drawing,Renaissance,1501,Italian,7,1069
-95,A Bear Walking,Drawing,Renaissance,1477,Italian,6,1069
-96,Seated Nude in Shoes and Stockings,Drawing,Expressionism,1918,German,10,1081
-97,Seated Woman in Corset and Boots,Drawing,Expressionism,1918,German,9,1081
-98,Reclining Woman with Raised Skirt,Drawing,Expressionism,1918,German,5,1081
-99,Landscape with Houses,Drawing,Expressionism,1917,German,6,1081
-100,Street Cart,Drawing,Expressionism,1914,German,3,1081
-101,Woman Buttoning Her Shoes,Painting,Expressionism,1915,German,7,1081
-102,Seminude with Arms Raised,Painting,Expressionism,1914,German,6,1081
-103,Woman and Girl Embracing,Painting,Expressionism,1918,German,4,1081
-104,Semi-Dressed Model,Painting,Expressionism,1917,German,3,1081
-105,Two Reclining Nudes,Painting,Expressionism,1911,German,1,1081
-106,Reclining Nude,Painting,Expressionism,1918,German,7,1067
-107,Observed in a Dream,Painting,Expressionism,1911,German,2,1067
-108,Couple Embracing,Drawing,Expressionism,1911,German,2,1074
-109,Seated Woman in Chemise,Painting,Expressionism,1914,German,1,1074
-110,Reclining Nude with Boots,Painting,Expressionism,1918,German,5,1074
-111,Standing Nude with Orange Drapery,Painting,Expressionism,1914,German,3,1059
-112,Nude in Black Stockings,Drawing,Expressionism,1917,German,4,1059
-113,Torso of a Seated Woman with Boots,Drawing,Expressionism,1918,German,4,1059
-114,Two Women Embracing,Drawing,Expressionism,1913,German,6,1059
+50,Water Lilies,Painting,Impressionism,1983,France,9.704460227,1017
+51,Ile aux Fleurs near Vetheuil,Painting,Impressionism,1956,France,4.848305235,1017
+52,Camille Monet on a Garden Bench,Painting,Impressionism,2002,France,1.678394754,1059
+53,Poppy Fields,Painting,Impressionism,2001,France,4.61233192,1059
+54,Camille Monet in the Garden at Argenteuil,Painting,Impressionism,2000,France,1.025793913,1059
+55,The Stroller,Painting,Impressionism,2003,France,0.315646285,1074
+56,The Path through Irises,Painting,Impressionism,2001,France,4.383979285,1074
+57,Water Lilies,Painting,Impressionism,1998,France,0.868918883,1074
+58,Jean Monet on His Hobby Horse,Painting,Impressionism,2000,France,6.004651823,1099
+59,The Manneporte,Painting,Impressionism,1951,France,5.20608831,1099
+60,Houses on the Achterzaan,Painting,Impressionism,1975,France,6.650185646,1099
+61,Arlesienne Madame Joseph Michel Ginoux,Painting,Post-Impressionism,1951,Dutch,2.890268825,1059
+62,Oleanders,Painting,Post-Impressionism,1962,Dutch,1.353648087,1059
+63,Peasant Woman Cooking by a Fireplace,Painting,Post-Impressionism,1984,Dutch,0.036717584,1059
+64,Self-Portrait with a Straw Hat,Painting,Post-Impressionism,1967,Dutch,7.448697928,1074
+65,Shoes,Painting,Post-Impressionism,1992,Dutch,1.229371233,1074
+66,Roses,Painting,Post-Impressionism,1993,Dutch,0.200514888,1074
+67,Wheat Field with Cypresses,Painting,Post-Impressionism,1993,Dutch,2.087240134,1074
+68,The Adoration of the Magi,Painting,Renaissance,1315,Italian,7.920219255,1059
+69,Hercules and Cacus,Statuette group,Renaissance,1550,Italian,4.895290724,1059
+70,Samson and the Philistines,Statuette group,Renaissance,1545,Italian,5.802137408,1059
+71,The Day,Statuette,Renaissance,1595,Italian,7.589955718,1059
+72,Studies for the Libyan Sibyl,Drawing,Renaissance,1511,Italian,6.309617292,1059
+73,The Last Judgment,Drawing,Renaissance,1570,Italian,3.987977543,1096
+74,Anatomical Studies of a Leg,Drawing,Renaissance,1475,Italian,9.550812954,1069
+75,A Figure and Some Architectural Details,Drawing,Renaissance,1475,Italian,0.217068251,1034
+76,Anatomical Study of a Knee,Drawing,Renaissance,1475,Italian,2.243872222,1034
+77,Sketches of a Funeral Monument,Drawing,Renaissance,1490,Italian,9.034482278,1017
+78,Architectural Study,Drawing,Renaissance,1485,Italian,6.28883221,1021
+79,Study of Figures from Michelangelos Last Judgment,Drawing,Renaissance,1540,Italian,0.363668398,1061
+80,Denial of Saint Peter,Print,Baroque,1603,Italian,8.60118178,1034
+81,The Musicians,Painting,Baroque,1597,Italian,3.134420081,1059
+82,The Denial of Saint Peter,Painting,Baroque,1610,Italian,4.495691025,1059
+83,Allegory of the Catholic Faith,Painting,Baroque,1670,Dutch,2.43200344,1059
+84,A Maid Asleep,Painting,Baroque,1656,Dutch,8.061834587,1034
+85,Study of a Young Woman,Painting,Baroque,1665,Dutch,9.748833356,1034
+86,Young Woman with a Lute,Painting,Baroque,1662,Dutch,6.287899371,1034
+87,Young Woman with a Water Pitcher,Painting,Baroque,1657,Dutch,2.75631481,1096
+88,A Young Woman Reading,Painting,Baroque,1667,Dutch,5.916812858,1021
+89,Compositional Sketches for the Virgin Adoring the Christ Child,Drawing,Renaissance,1480,Italian,6.911619594,1024
+90,The Head of the Virgin in Three Quarter View Facing Right,Drawing,Renaissance,1510,Italian,9.919774941,1024
+91,The Head of a Grotesque Man in Profile Facing Right,Drawing,Renaissance,1500,Italian,2.306649745,1059
+92,Head of a Man in Profile Facing to the Left,Drawing,Renaissance,1490,Italian,5.906038799,1061
+93,Allegory on the Fidelity of the Lizard,Drawing,Renaissance,1496,Italian,2.65192183,1061
+94,Studies for Hercules Holding a Club Seen in Frontal View,Drawing,Renaissance,1501,Italian,6.313053504,1069
+95,A Bear Walking,Drawing,Renaissance,1477,Italian,2.166234388,1069
+96,Seated Nude in Shoes and Stockings,Drawing,Expressionism,1918,German,0.741948694,1081
+97,Seated Woman in Corset and Boots,Drawing,Expressionism,1918,German,5.276396765,1081
+98,Reclining Woman with Raised Skirt,Drawing,Expressionism,1918,German,8.829850775,1081
+99,Landscape with Houses,Drawing,Expressionism,1917,German,3.55555568,1081
+100,Street Cart,Drawing,Expressionism,1914,German,5.934100191,1081
+101,Woman Buttoning Her Shoes,Painting,Expressionism,1915,German,4.417317059,1081
+102,Seminude with Arms Raised,Painting,Expressionism,1914,German,1.670389904,1081
+103,Woman and Girl Embracing,Painting,Expressionism,1918,German,7.055579213,1081
+104,Semi-Dressed Model,Painting,Expressionism,1917,German,2.475662779,1081
+105,Two Reclining Nudes,Painting,Expressionism,1911,German,1.624550421,1081
+106,Reclining Nude,Painting,Expressionism,1918,German,6.544689673,1067
+107,Observed in a Dream,Painting,Expressionism,1911,German,4.221933347,1067
+108,Couple Embracing,Drawing,Expressionism,1911,German,2.453638868,1074
+109,Seated Woman in Chemise,Painting,Expressionism,1914,German,4.890903338,1074
+110,Reclining Nude with Boots,Painting,Expressionism,1918,German,3.691766519,1074
+111,Standing Nude with Orange Drapery,Painting,Expressionism,1914,German,8.363934374,1059
+112,Nude in Black Stockings,Drawing,Expressionism,1917,German,1.173195766,1059
+113,Torso of a Seated Woman with Boots,Drawing,Expressionism,1918,German,4.314573275,1059
+114,Two Women Embracing,Drawing,Expressionism,1913,German,6.121918504,1059

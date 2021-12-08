@@ -74,7 +74,7 @@ if table_name:
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
     boroughs = query_db(sql_all_boroughs)["borough"].tolist()
-    borough = st.selectbox("Choose a customer", boroughs)
+    borough = st.selectbox("Choose a borough", boroughs)
 except:
     st.write("Sorry! Something went wrong with your query, please try again.")
 
@@ -97,5 +97,40 @@ if borough:
 	try:
 		museums = query_db(sql_all_museums_per_borough)
 		st.dataframe(museums)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
+
+"## Query 2: Find all museums in which an artists work appears, along with the number of works and their average"
+
+sql_all_creators = "SELECT name FROM culture.MuseumObjectCreator ORDER BY name;"
+try:
+    creators = query_db(sql_all_creators)["name"].tolist()
+    creator = st.selectbox("Choose an artist or creator", creators)
+except:
+    st.write("Sorry! Something went wrong with your query, please try again.")
+
+if creator:
+	f"Display the result"
+
+	sql_all_museums_by_creator = f"""
+		SELECT M.name museum, 
+		       COUNT(MO.moid) total_objects, 
+			   AVG(MO.popularityRank)::numeric(10, 1) average_popularity,
+			   MIN(MO.date) earliest_piece,
+			   MAX(MO.date) latest_piece
+		FROM culture.MuseumObjectCreator C, 
+		     culture.created_by CB,
+		     culture.has_object_MuseumObject MO,
+		     culture.located_at_Museum M
+		WHERE C.name = '{creator}'
+		AND C.mocid = CB.mocid
+		AND CB.moid = MO.moid
+		AND MO.mid = M.mid
+		GROUP BY (M.name)
+		ORDER BY total_objects DESC, museum;"""
+
+	try:
+		museums_by_artist = query_db(sql_all_museums_by_creator)
+		st.dataframe(museums_by_artist)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
