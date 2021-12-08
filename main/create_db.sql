@@ -42,23 +42,22 @@ create table culture.located_at_Museum(
 create table culture.has_object_MuseumObject(
 	moid			integer		primary key,
 	name			varchar(128),
-	period			varchar(64),
+	type			varchar(64),
 	style			varchar(64),
-	date			date,
-	country			varchar(64),
+	date			integer,
+	country		varchar(64),
 	popularityRank	integer,
-	mid				integer 	not null,
+	mid			integer 	not null,
 	foreign key (mid) references culture.located_at_Museum(mid)
 );
 
 create table culture.MuseumObjectCreator(
-	mocid		integer		primary key,
-	name		varchar(128),
-	period		varchar(64),
-	style		varchar(64),
+	mocid			integer		primary key,
+	name			varchar(128),
+	style			varchar(64),
 	birthCountry	varchar(64),
-	dob		date,
-	dod		date
+	dob			integer,
+	dod			integer
 );
 
 create table culture.created_by(

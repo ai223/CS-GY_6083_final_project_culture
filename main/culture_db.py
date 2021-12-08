@@ -2,6 +2,9 @@ import pandas as pd
 import psycopg2
 import streamlit as st
 from configparser import ConfigParser
+import datetime
+import time
+from dateutil.relativedelta import relativedelta
 
 "# Demo: Streamlit + Postgres"
 
@@ -66,7 +69,7 @@ if table_name:
             "Sorry! Something went wrong with your query, please try again."
         )
 
-"## Query 1: Find all museums per borough"
+"## Query 1: Find all museums per borough with their number of special exhibitions over the past year"
 
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
@@ -78,11 +81,18 @@ except:
 if borough:
 	f"Display the result"
 
+	todays_Date = datetime.date.fromtimestamp(time.time()) - relativedelta(years=1)
+	date_in_ISOFormat = todays_Date.isoformat()
+
 	sql_all_museums_per_borough = sql_order = f"""
-        SELECT M.name, M.type
-        FROM culture.Location L, culture.located_at_Museum M 
+        SELECT M.name museum, M.type, COUNT(ME.meid) exhibitions
+        FROM culture.Location L, culture.located_at_Museum M, culture.has_event E
+        LEFT JOIN culture.MuseumEvent ME ON (ME.meid = E.meid AND ME.startDate >= '{date_in_ISOFormat}'::date)
         WHERE L.borough = '{borough}'
-        AND L.lid = M.lid;"""
+        AND M.lid = L.lid
+        AND E.mid = M.mid
+        GROUP BY M.name, M.type
+        ORDER BY museum, type, exhibitions;"""
 
 	try:
 		museums = query_db(sql_all_museums_per_borough)
