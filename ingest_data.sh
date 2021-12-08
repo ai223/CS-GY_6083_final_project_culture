@@ -9,3 +9,5 @@ cat ./has_screenwriter.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.has_sc
 cat ./FilmActor.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.filmactor FROM STDIN CSV HEADER"
 cat ./has_actor.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.has_actor FROM STDIN CSV HEADER"
 cat ./Location.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.location FROM STDIN CSV HEADER"
+cat ./location_museum.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.location FROM STDIN CSV HEADER"
+cat ./located_at_Museum.csv | psql -U ai1221 -d ai1221_db -c "COPY culture.located_at_Museum FROM STDIN CSV HEADER"
