@@ -66,3 +66,26 @@ if table_name:
             "Sorry! Something went wrong with your query, please try again."
         )
 
+"## Query 1: Find all museums per borough"
+
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+try:
+    boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+    borough = st.selectbox("Choose a customer", boroughs)
+except:
+    st.write("Sorry! Something went wrong with your query, please try again.")
+
+if borough:
+	f"Display the result"
+
+	sql_all_museums_per_borough = sql_order = f"""
+        SELECT M.name, M.type
+        FROM culture.Location L, culture.located_at_Museum M 
+        WHERE L.borough = '{borough}'
+        AND L.lid = M.lid;"""
+
+	try:
+		museums = query_db(sql_all_museums_per_borough)
+		st.dataframe(museums)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
