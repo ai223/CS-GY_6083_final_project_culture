@@ -116,7 +116,7 @@ create table culture.has_director_Film(
 	genre		varchar(64),
 	country     varchar(64),
 	fdid		integer		not null,
-	foreign key (fdid) references culture.FilmDirector
+	foreign key (fdid) references culture.FilmDirector(fdid)
 );
 
 create table culture.showing_at(
