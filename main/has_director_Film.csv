@@ -6,7 +6,7 @@ fid,name,year,genre,country,fdid
 5,Jules and Jim,1962,new wave,France,2
 6,Shoot the Piano Player,1960,new wave,France,2
 7,The Graduate,1967,drama,USA,3
-8,Catch-22, 1970,black comedy,USA,3
+8,Catch-22, 1970,comedy,USA,3
 9,The Birdcage,1996,comedy,USA,3
 10,Rear Window,1954,suspense,USA,4
 11,Psycho,1960,suspense,USA,4
@@ -17,3 +17,35 @@ fid,name,year,genre,country,fdid
 16,Seven Samurai,1954,action,Japan,6
 17,Rashomon,1950,crime,Japan,6
 18,Ran,1985,drama,Japan,6
+19,Goodfellas,1990,drama,USA,7
+20,Taxi Driver,1976,drama,USA,7
+21,Cape Fear,1991,horror,USA,7
+22,The King Of Comedy,1982,drama,USA,7
+23,Parasite,2019,drama,South Korea,8
+24,Snowpiercer,2013,drama,South Korea,8
+25,Memories of Murder,2003,crime,South Korea,8
+26,The Host,2006,horror,South Korea,8
+27,Rules of The Game,1939,comedy,France,9
+28,The Grand Illusion,1937,war,France,9
+29,25th hour,2002,crime,USA,10
+30,Do the Right Thing,1989,drama,USA,10
+31,Jaws,1975,horror,USA,11
+32,Jurassic Park,1993,sci-fi,USA,11
+33,A ClockWork Orange,1971,crime,Great Britain,12
+34,The Shining,1980,horror,Great Britain,12
+35,2001:A Space Odyssey,1968,sci-fi,USA,12
+35,The Good the Bad the Ugly,1968,spaghetti western,Italy,13
+36,Blow Up,1966,crime,Great Britain,14
+27,Last Tango in Paris,1972,drama,France,15
+28,Strike,1925,silent film,Russia,16
+29,The Prestige,2006,sci-fii,USA,17
+30,Memento,2000,drama,USA,17
+31,The Player,1992,drama,USA,18
+32,Touch of Evil,1958,film noir,USA,19
+33,Citizen Cane,1941,drama,USA,19
+34,The Godfather,1972,drama,USA,20
+35,The Godfather part 2,1974,drama,USA,20
+36,The Conversation,1974,drama,USA,20
+27,Apocalypse Now,2019,war,USA,20
+28,The Maltese Falcon,1941,film noir,USA,21
+
