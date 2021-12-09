@@ -8,6 +8,8 @@ Net ID Password: N11778890
 =================================
 TO COPY FILES FROM ../main
 =================================
+For Dan:
+scp -r /Users/danielgray/Desktop/dbculture/CS-GY_6083_final_project_culture/main/ ai1221@jedi.poly.edu:~
 
 $ scp -r ~/eclipse-workspace/Lyrics/CS-GY_6083_final_project_culture/main/ ai1221@jedi.poly.edu:~
 $ scp -r <file-path>/main/ ai1221@jedi.poly.edu:~
