@@ -7,7 +7,7 @@ fdid,name,dob,dod
 6,Akira Kurosawa,1910-04-23,1998-09-06
 7,Martin Scorsese,1942-11-17,
 8,Bong Joon-ho,1969-10-14,
-9,Jean Renoir,1894-10-15,1979-02-12,
+9,Jean Renoir,1894-10-15,1979-02-12
 10,Spike Lee,1957-04-20,
 11,Steven Spielberg,1946-10-18,
 12,Stanley Kubrick,1928-07-26,1999-04-07
@@ -19,5 +19,3 @@ fdid,name,dob,dod
 18,Robert Altman,1925-02-20,2006-11-20
 19,Orsen Welles,1915-05-06,1985-10-10
 20,Francis Ford Coppola,1939-04-07,
-
-
