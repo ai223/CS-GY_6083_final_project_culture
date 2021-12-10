@@ -131,9 +131,7 @@ create table culture.showing_at(
 
 create table culture.FilmActor(
 	faid	integer		primary key,
-	name	varchar(128),
-	dob		date,
-	dod		date
+	name	varchar(128)
 );
 
 create table culture.has_actor(
@@ -146,9 +144,8 @@ create table culture.has_actor(
 
 create table culture.FilmScreenwriter(
 	fscid 	integer		primary key,
-	name	varchar(128),
-	dob		date,
-	dod		date
+	name	varchar(128)
+	
 );
 
 create table culture.has_screenwriter(
