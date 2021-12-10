@@ -157,7 +157,8 @@ if artwork_stem:
 		AND MO.moid = CB.moid
 		AND CB.mocid = MOC.mocid
 		AND MO.mid = M.mid
-		AND M.lid = L.lid;"""
+		AND M.lid = L.lid
+		ORDER BY piece;"""
 
 	try:
 		matching_artworks = query_db(sql_find_artworks_by_name)
