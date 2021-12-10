@@ -8,13 +8,13 @@ fid,name,year,genre,country,fdid
 7,The Graduate,1967,drama,USA,3
 8,Catch-22, 1970,comedy,USA,3
 9,The Birdcage,1996,comedy,USA,3
-10,Rear Window,1954,suspense,USA,4
-11,Psycho,1960,suspense,USA,4
-12,Vertigo,1958,suspense,USA,4
+10,Rear Window,1954,thriller,USA,4
+11,Psycho,1960,horror,USA,4
+12,Vertigo,1958,thriller,USA,4
 13,La Srada,1954,drama,Italy,5
 14,The Voice of the Moon,1990,comedy,Italy,5
 15,La Dolce Vita,1960,drama,Italy,5
-16,Seven Samurai,1954,action,Japan,6
+16,Seven Samurai,1954,war,Japan,6
 17,Rashomon,1950,crime,Japan,6
 18,Ran,1985,drama,Japan,6
 19,Goodfellas,1990,drama,USA,7
@@ -48,3 +48,46 @@ fid,name,year,genre,country,fdid
 47,The Conversation,1974,drama,USA,20
 48,Apocalypse Now,2019,war,USA,20
 49,The Maltese Falcon,1941,film noir,USA,21
+50,One-Armed Swordsman,1967,wuxia,Hong Kong,22
+51,Chungking Expresss,1994,crime,Hong Kong,23
+52,Spring In a Small Town,1948,drama,China,24
+53,Shadow,2018,wuxia,China,25
+54,Kung Fu Hustle,2004,drama,China,26
+55,Sunset Boulevard,1950,film noir,USA,27
+56,The Third Man,1949,film noir,Great Britain,28
+57,Notorious,1946,film noir,USA,4
+58,A Fistful of Dollars,1964,spaghetti western,Italy,13
+59,Stagecoach,1939,western,USA,29
+60,The Outlaw Josey Wales,1976,western,USA,30
+61,McCabe & Mrs. Miller,western,USA,18
+62,Saving Private Ryan,1998,war,USA,11
+63,Pulp Fiction,1994,crime,USA,31
+64,Resevoir Dogs,1992,crime,USA,31
+65,Caddyshack,1980,comedy,USA,32
+66,Amarcord,1973,comedy,Italy,5
+67,Spirits of the Dead,1968,horror,Italy,5
+68,Throne of Blood,1957,horror,Japan,6
+69,Dog Day Afternoon,1975,crime,USA,33
+70,Serpico,1973,crime,USA,33
+71,The Irishmen,2019,drama,USA,7
+72,Inception,2010,thriller,USA,17
+73,Once Upon A Time in Hollywood,2019,drama,USA,31
+74,Speed,1994,thriller,USA,34
+75,The Matrix,1999,sci-fi,USA,35
+76,Eraserhead,1977,horror,USA,36
+77,Blue Velvet,1986,horror,USA,36
+78,Mulholland Drive,2001,thriller,USA,36
+79,Barry Lyndon,1975,war,Great Britain,12
+80,The Hidden Fortress,1958,war,Japan,6
+81,Eyes Wide Shut,thriller,Great Britain,12
+82,The Wizzard of Oz,1939,musical,USA,27
+83,Greece,1978,musical,USA,28
+84,Saturday Night Fever,musical,USA,29
+85,Yojimbo,1961,war,Japan,6
+86,Exit Through The Gift Shop,2010,documentary,40
+87,The Island of Flowers,1989,documentary,Brazil,41
+88,Ciritzen Four,2014,documentary,USA,42
+89,City of God,2002,crime,Brazil,43
+90,A Few Good Men,1992,drama,USA,44
+91,One Flew Over the Cuckoo's Nest,1975,drama,45
+
