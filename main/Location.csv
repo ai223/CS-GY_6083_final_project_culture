@@ -1,2 +1,5 @@
 lid,country,borough,zip,poBox,latitude,longitude
-1,USA,Queens,11364,12345,40.74251,-73.78401
+1,USA,Queens,11364,1245,40.74251,73.78401
+2,USA,New York,10003,4321,40.7265,73.9815
+3,USA,New York,10014,3231,,
+4,USA,New York,10002,3233,,
