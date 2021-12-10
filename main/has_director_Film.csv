@@ -48,7 +48,7 @@ fid,name,year,genre,country,fdid
 47,The Conversation,1974,drama,USA,20
 48,Apocalypse Now,2019,war,USA,20
 49,The Maltese Falcon,1941,film noir,USA,21
-50,One-Armed Swordsman,1967,wuxia,Hong Kong,22
+50,One Armed Swordsman,1967,wuxia,Hong Kong,22
 51,Chungking Expresss,1994,crime,Hong Kong,23
 52,Spring In a Small Town,1948,drama,China,24
 53,Shadow,2018,wuxia,China,25
@@ -89,4 +89,4 @@ fid,name,year,genre,country,fdid
 88,Citzen Four,2014,documentary,USA,42
 89,City of God,2002,crime,Brazil,43
 90,A Few Good Men,1992,drama,USA,44
-91,One Flew Over the Cuckoos Nest,1975,drama,USA,45
+91,One Flew Over,1975,drama,USA,45
