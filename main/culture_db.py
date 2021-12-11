@@ -175,7 +175,7 @@ sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
 actors = query_db(sql_all_actors)["name"].tolist()
 actor = st.selectbox("Choose an Actor", actors)
 
-sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+#sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 boroughs = query_db(sql_all_boroughs)["borough"].tolist()
 borough = st.selectbox("Choose a borough", boroughs)
 
