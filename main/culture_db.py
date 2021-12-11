@@ -165,3 +165,45 @@ if artwork_stem:
 		st.dataframe(matching_artworks)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
+
+##"## Query4: Find all theaters playing a movie by THIS ACTOR, by THIS GENRE, and In This BOROUGH"
+
+
+"""## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
+
+sql_all_actors = "SELECT name FROM culture.FilmActor;"
+actors = query_db(sql_all_actors)["name"].tolist()
+actor = st.selectbox("Choose an Actor", actors)
+
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+borough = st.selectbox("Choose a borough", boroughs)
+
+
+if borough and actor:
+	f"Display the result"
+	sql_actor_and_borough = f"""
+		SELECT FT.name
+		FROM has_location_FilmTheater FT, Location L, 
+		has_actor HA,FilmActor FA,
+		has_director_Film F,showing_at SA
+		WHERE faid.FA = faid.HA
+		AND fid.HA = fid.F
+		AND fid.F = fid.SA
+		AND ftid.SA = FT.ftid
+		AND FT.lid = L.lid
+		AND L.borough = {borough}
+		AND FA.name = {actor};"""
+
+	try:
+		actorborough = query_db(sql_actor_and_borough)
+		st.dataframe(actorborough)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
+
+
+
+"""## Query 5: Find all international movies, by THIS DIRECTOR that are playing in THIS BOROUGH"""
+
+
+
