@@ -171,7 +171,7 @@ if artwork_stem:
 
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
 
-sql_all_actors = "SELECT name FROM culture.FilmActor;"
+sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
 actors = query_db(sql_all_actors)["name"].tolist()
 actor = st.selectbox("Choose an Actor", actors)
 
