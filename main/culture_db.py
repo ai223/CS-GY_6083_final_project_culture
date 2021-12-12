@@ -209,22 +209,48 @@ if actor and borough:
 
 
 	
-
 """## Query 5: Find all international movies, by THIS DIRECTOR that are playing in THIS BOROUGH"""
+
+"""## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with
+and exhibit that is happening at a Museum on the same day!"""
+
+sql_all_days = "SELECT DATE(starttime) FROM culture.FS;"
+try:
+	days = query_db(sql_all_days)["days"].tolist()
+	day = st.selectbox("Choose a day!", days)
+
+except:
+	st.write("Sorry! Something went wrong with your query, please try again.")
+
+if day:
+	f"Display the result"
+	sql_film_and_exhibit = f"""
+
+	SELECT FT.name Theatre,F.name Film, FS.starttime dateAndTime, FS.RoomNum TheaterRoom, LAM.name Museum , ME.name Exhibit
+		FROM culture.has_location_FilmTheater FT,  
+		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
+        culture.has_event HE, culture.MueseumEvent ME,culture.located_at_Museum LAM
+		WHERE F.fid = SA.fid
+		AND SA.fsid = FS.fsid
+		AND SA.ftid = FT.ftid
+		AND FT.lid = L.lid
+		AND L.lid = LAM.lid 
+		AND LAM.mid = HE.mid 
+		AND HE.meid  = ME.meid
+		AND DATE(FS.starttime) = '{day}'
+		AND DATE(FS.starttime) >= DATE(ME.startDate)
+		AND FS.starttime <= ME.endDate;"""
+
+		try:
+			dayout = query_db(sql_film_and_exhibit)
+			st.dataframe(dayout)
+		except:
+			st.write("Sorry! Something went wrong with your query, please try again.")
+
+
+
+
+
    
 
 
-'''
-if actor:
-	f"Display the result"
-	sql_actor_and_borough = f"""
-		SELECT FT.name
-		FROM has_location_FilmTheater FT,  
-		has_actor HA,FilmActor FA,
-		has_director_Film F,showing_at SA
-		WHERE FA.name = '{actor}'
-		AND FA.faid = HA.faid
-		AND HA.fid = F.fid
-		AND F.fid = SA.fid
-		AND SA.ftid= FT.ftid;"""
-'''
