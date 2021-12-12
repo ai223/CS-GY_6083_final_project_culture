@@ -46,7 +46,7 @@ def query_db(sql: str):
 
     return df
 
-"## New York City Culture Finder and Event Planner for Art and Films!"
+"## NYC Culture Finder & Event Planner (for Art and Films!)"
 
 "## Read tables"
 
@@ -245,7 +245,11 @@ if director and genre and borough3:
 
 	try:
 		directorboroughgenre = query_db(sql_director_and_borough_and_genre)
-		st.dataframe(directorboroughgenre)
+		if directorboroughgenre is None:
+			st.write("There are no films in our database with that Director/Genre playing in the Borough you selected :(")
+		else:
+			st.dataframe(directorboroughgenre)
+	
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
