@@ -192,11 +192,11 @@ if actor:
 		FROM has_location_FilmTheater FT,  
 		has_actor HA,FilmActor FA,
 		has_director_Film F,showing_at SA
-		WHERE faid.FA = faid.HA
-		AND fid.HA = fid.F
-		AND fid.F = fid.SA
-		AND ftid.SA = FT.ftid
-		AND FA.name = '{actor}';"""
+		WHERE FA.name = '{actor}'
+		AND FA.faid = HA.faid
+		AND HA.fid = F.fid
+		AND F.fid = SA.fid
+		AND SA.ftid= FT.ftid;"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
