@@ -192,7 +192,7 @@ if actor:
 		AND fid.HA = fid.F
 		AND fid.F = fid.SA
 		AND ftid.SA = FT.ftid
-		AND FA.name = {actor};"""
+		AND FA.name = '{actor}';"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
