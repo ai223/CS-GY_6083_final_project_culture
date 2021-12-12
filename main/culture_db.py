@@ -200,7 +200,7 @@ if actor and borough:
 		AND F.fid = SA.fid
 		AND SA.ftid= FT.ftid
 		AND FT.lid = L.lid
-		AND L.borough = {borough}"""
+		AND L.borough = '{borough}'"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
