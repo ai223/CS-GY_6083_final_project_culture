@@ -237,7 +237,7 @@ if director and genre and borough3:
 		AND SA.ftid= FT.ftid
 		AND SA.fsid = FS.fsid
 		AND FT.lid = L.lid
-		AND L.borough = '{borough2}'
+		AND L.borough = '{borough3}'
 		AND F.genre = '{genre};'"""
 
 	try:
