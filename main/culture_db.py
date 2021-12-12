@@ -187,7 +187,7 @@ except:
 
 
 
-if actor:
+if actor and borough:
 	f"Display the result"
 	sql_actor_and_borough = f"""
 		SELECT FT.name
