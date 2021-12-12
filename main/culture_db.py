@@ -69,6 +69,40 @@ if table_name:
             "Sorry! Something went wrong with your query, please try again."
         )
 
+"""## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)
+Just putting this query here too test some error i got before"""
+
+sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
+actors = query_db(sql_all_actors)["name"].tolist()
+actor = st.selectbox("Choose an Actor", actors)
+
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+borough = st.selectbox("Choose a borough", boroughs)
+
+
+if borough and actor:
+	f"Display the result"
+	sql_actor_and_borough = f"""
+		SELECT FT.name
+		FROM has_location_FilmTheater FT, Location L, 
+		has_actor HA,FilmActor FA,
+		has_director_Film F,showing_at SA
+		WHERE faid.FA = faid.HA
+		AND fid.HA = fid.F
+		AND fid.F = fid.SA
+		AND ftid.SA = FT.ftid
+		AND FT.lid = L.lid
+		AND L.borough = {borough}
+		AND FA.name = {actor};"""
+
+	try:
+		actorborough = query_db(sql_actor_and_borough)
+		st.dataframe(actorborough)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
+
+
 "## Query 1: Find all museums per borough with their number of special exhibitions over the past year"
 
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
@@ -170,14 +204,14 @@ if artwork_stem:
 
 
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
-
+'''
 sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
 actors = query_db(sql_all_actors)["name"].tolist()
 actor = st.selectbox("Choose an Actor", actors)
 
-sql_all_boroughs2 = "SELECT DISTINCT(borough) FROM culture.Location;"
-boroughs2 = query_db(sql_all_boroughs2)["borough"].tolist()
-borough = st.selectbox("Choose a borough", boroughs2)
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+borough = st.selectbox("Choose a borough", boroughs)
 
 
 if borough and actor:
@@ -200,7 +234,7 @@ if borough and actor:
 		st.dataframe(actorborough)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
-
+'''
 
 
 """## Query 5: Find all international movies, by THIS DIRECTOR that are playing in THIS BOROUGH"""
