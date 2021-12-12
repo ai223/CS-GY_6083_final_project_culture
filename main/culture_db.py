@@ -238,7 +238,7 @@ if director and genre and borough3:
 		AND SA.fsid = FS.fsid
 		AND FT.lid = L.lid
 		AND L.borough = '{borough3}'
-		AND F.genre = '{genre};'"""
+		AND F.genre = '{genre}';"""
 
 	try:
 		directorboroughgenre = query_db(sql_director_and_borough_and_genre)
