@@ -234,7 +234,7 @@ if day:
 		AND FT.lid = L.lid
 		AND L.lid = LAM.lid 
 		AND LAM.mid = HE.mid 
-		AND HE.meid  = ME.meid
+		AND HE.meid  = ME.meid;"""
 		AND CAST(FS.starttime as DATE) = {day};"""
 		
 	try:
