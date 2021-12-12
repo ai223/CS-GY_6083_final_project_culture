@@ -279,7 +279,7 @@ if country:
 		HAVING COUNT(*) > 1;"""
 	
 	try:
-		teams = query_db(sql_director_and_borough_and_genre)
+		teams = query_db(sql_country)
 		st.dataframe(teams)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
