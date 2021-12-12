@@ -272,7 +272,7 @@ if country:
 		culture.has_director_Film F, 
 		culture.FilmDirector FD
 		WHERE F.fdid = FD.fdid
-		AND FA.aid = HA.aid
+		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
 		AND F.country = '{country}'
 		GROUP BY FD.name, FA.name
