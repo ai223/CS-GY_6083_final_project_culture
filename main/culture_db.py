@@ -266,7 +266,7 @@ except:
 if country:
 	f"Display the result"
 	sql_country= f"""
-		SELECT FD.name director, FA.name actor, COUNT(*) NumberOfFilmsMadeTogether
+		SELECT FD.name director, FA.name actor, COUNT(*) 
 		FROM culture.has_actor HA, 
 		culture.FilmActor FA,
 		culture.has_director_Film F, 
