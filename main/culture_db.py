@@ -210,7 +210,7 @@ if actor and borough:
 
 """## Query 5: Find all international movies, by THIS DIRECTOR, and THIS GENRE that are playing in THIS BOROUGH"""
 
-sql_all_directors = "SELECT name FROM culture.filmdirector;"
+sql_all_directors = "SELECT name FROM culture.FilmDirector;"
 sql_all_genres = "SELECT DISTINCT(genre) FROM culture.has_director_Film;"
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
