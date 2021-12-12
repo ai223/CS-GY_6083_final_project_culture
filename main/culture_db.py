@@ -214,7 +214,7 @@ if actor and borough:
 """## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with
 and exhibit that is happening at a Museum on the same day!"""
 
-sql_all_days = "SELECT DATE(starttime) FROM culture.FS;"
+sql_all_days = "SELECT DATE(starttime) FROM culture.FilmScreening;"
 try:
 	days = query_db(sql_all_days)["days"].tolist()
 	day = st.selectbox("Choose a day!", days)
