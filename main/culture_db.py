@@ -208,7 +208,7 @@ if actor and borough:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
 
-"""## Query 5: Find all international movies, by THIS DIRECTOR, and THIS GENRE that are playing in THIS BOROUGH"""
+"""## Query 5: Find all movies, by THIS DIRECTOR, and THIS GENRE that are playing in THIS BOROUGH"""
 
 sql_all_directors = "SELECT name FROM culture.FilmDirector;"
 sql_all_genres = "SELECT DISTINCT(genre) FROM culture.has_director_Film;"
@@ -229,7 +229,7 @@ if director and genre and borough3:
 	sql_director_and_borough_and_genre = f"""
 		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
-		culture.filmdirectpr FD,
+		culture.FilmDirector FD,
 		culture.has_director_Film F,
 		culture.showing_at SA,
 		culture.Location L,
@@ -255,6 +255,34 @@ if director and genre and borough3:
 purpose of this query, we are going to consider an Actor/Director team,
 as an Actor and Director who worked on 2 or more movies together. """
 
+sql_all_countries = "SELECT country FROM culture.has_director_Film;"
+
+try:
+	countries = query_db(sql_all_countries)["country"].tolist()
+	country = st.selectbox("Choose a Country", countries)
+except:
+	st.write("Sorry! Something went wrong with your query, please try again.")
+
+if country:
+	f"Display the result"
+	sql_country= f"""
+		SELECT FD.name director, FA.name actor, COUNT(*) Number of Films Made Together
+		FROM culture.has_actor HA, 
+		culture.FilmActor FA,
+		culture.has_director_Film F, 
+		culture.FilmDirector FD
+		WHERE F.fdid = FD.fdid
+		AND FA.aid = HA.aid
+		AND HA.fid = F.fid
+		AND F.country = '{country}'
+		GROUP BY FD.name, FA.name
+		HAVING COUNT(*) > 1;"""
+	
+	try:
+		teams = query_db(sql_director_and_borough_and_genre)
+		st.dataframe(teams)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
 
 
 
