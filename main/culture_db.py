@@ -188,7 +188,7 @@ except:
 if actor:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT F.name
+		SELECT F.name filmName
 		FROM has_actor HA, FilmActor FA,
 		has_director_Film F
 		WHERE FA.name = '{actor}'
