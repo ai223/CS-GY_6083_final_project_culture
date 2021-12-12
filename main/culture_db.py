@@ -208,10 +208,56 @@ if actor and borough:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
 
-	
-"""## Query 5: Find all international movies, by THIS DIRECTOR that are playing in THIS BOROUGH"""
+"""## Query 5: Find all international movies, by THIS DIRECTOR, and THIS GENRE that are playing in THIS BOROUGH"""
 
-"""## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with an exhibit that is happening at a Museum on the same day!"""
+sql_all_directors = "SELECT name FROM culture.filmdirector;"
+sql_all_genres = "SELECT DISTINCT(genre) FROM culture.has_director_Film;"
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+try:
+	directors= query_db(sql_all_actors)["name"].tolist()
+	director = st.selectbox("Choose a Director", directors)
+	genres = query_db(sql_all_actors)["genre"].tolist()
+	genre = st.selectbox("Choose a genre!", genres)
+	boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+	borough3 = st.selectbox("Choose a borough", boroughs,3)
+except:
+	st.write("Sorry! Something went wrong with your query, please try again.")
+
+
+if director and genres and borough3:
+	f"Display the result"
+	sql_actor_and_borough = f"""
+		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
+		FROM culture.has_location_FilmTheater FT,  
+		culture.filmdirectpr FD,
+		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
+		WHERE FD.name = '{director}'
+		AND FD.fdid = F.fdid
+		AND F.fid = SA.fid
+		AND SA.ftid= FT.ftid
+		AND SA.fsid = FS.fsid
+		AND FT.lid = L.lid
+		AND L.borough = '{borough2}'
+		AND F.genre = '{genre};'"""
+
+	try:
+		actorborough = query_db(sql_actor_and_borough)
+		st.dataframe(actorborough)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
+
+
+
+
+
+"""## Query 6: Find all ACTOR/Director Teams, and count how many moviess they did together. For the 
+purpose of this query, we are going to consider an Actor/Director team,
+as an Actor and Director who worked on 2 or more movies together. """
+
+
+
+
+"""## Query 7: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with an exhibit that is happening at a Museum on the same day!"""
 
 sql_all_days = "SELECT CAST(starttime AS DATE) FROM culture.FilmScreening;"
 try:
