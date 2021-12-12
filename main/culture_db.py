@@ -213,7 +213,7 @@ if actor and borough:
 
 """## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with an exhibit that is happening at a Museum on the same day!"""
 
-sql_all_days = "SELECT starttime FROM culture.FilmScreening;"
+sql_all_days = "SELECT DATE(starttime) FROM culture.FilmScreening;"
 try:
 	days = query_db(sql_all_days)["starttime"].tolist()
 	day = st.selectbox("Choose a day!", days)
@@ -235,9 +235,9 @@ if day:
 		AND L.lid = LAM.lid 
 		AND LAM.mid = HE.mid 
 		AND HE.meid  = ME.meid
-		AND FS.starttime = '{day}' 
-		AND FS.starttime >= ME.startDate
-		AND FS.starttime <= ME.endDate;"""
+		AND DATE(FS.starttime) = '{day}' 
+		AND DATE(FS.starttime) >= DATE(ME.startDate)
+		AND DATE(FS.starttime) <= DATE(ME.endDate);"""
 
 	try:
 		dayout = query_db(sql_film_and_exhibit)
