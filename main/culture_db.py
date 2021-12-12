@@ -188,12 +188,15 @@ except:
 if actor:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT F.name filmName
-		FROM culture.has_actor HA, culture.FilmActor FA,
-		culture.has_director_Film F
+		SELECT FT.name
+		FROM culture.has_location_FilmTheater FT,  
+		culture.has_actor HA, culture.FilmActor FA,
+		culture.has_director_Film F, culture.showing_at SA
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
-		AND HA.fid = F.fid;"""
+		AND HA.fid = F.fid
+		AND F.fid = SA.fid
+		AND SA.ftid= FT.ftid;"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
