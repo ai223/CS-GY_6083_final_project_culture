@@ -211,8 +211,7 @@ if actor and borough:
 	
 """## Query 5: Find all international movies, by THIS DIRECTOR that are playing in THIS BOROUGH"""
 
-"""## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with
-and exhibit that is happening at a Museum on the same day!"""
+"""## Query 6: PLAN YOUR DAY in NYC. Pick a day, and we will tell you what Films are Playing on that day, and pair that with an exhibit that is happening at a Museum on the same day!"""
 
 sql_all_days = "SELECT starttime FROM culture.FilmScreening;"
 try:
@@ -238,7 +237,7 @@ if day:
 		AND HE.meid  = ME.meid
 		AND FS.starttime = '{day}' 
 		AND FS.starttime >= ME.startDate
-		AND FS.starttime) <= ME.endDate;"""
+		AND FS.starttime <= ME.endDate;"""
 
 	try:
 		dayout = query_db(sql_film_and_exhibit)
