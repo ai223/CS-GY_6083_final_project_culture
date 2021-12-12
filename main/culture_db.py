@@ -244,8 +244,7 @@ if director and genre and borough3:
 		AND F.genre = '{genre}'"""
 
 	try:
-		#directorboroughgenre = query_db(sql_director_and_borough_and_genre)
-		directorboroughgenre = query_db(sql_director_and_borough_and_genre).loc[0]['query5']
+		directorboroughgenre = query_db(sql_director_and_borough_and_genre)
 		if directorboroughgenre is None:
 			st.write("There are no films in our database with that Director/Genre playing in the Borough you selected :(")
 		else:
