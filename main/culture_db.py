@@ -173,8 +173,12 @@ if artwork_stem:
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
 
 sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
-actors = query_db(sql_all_actors)["name"].tolist()
-actor = st.selectbox("Choose an Actor", actors)
+try:
+	actors = query_db(sql_all_actors)["name"].tolist()
+	actor = st.selectbox("Choose an Actor", actors)
+except:
+	st.write("Sorry! Something went wrong with your query, please try again.")
+
 
 #sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 #boroughs = query_db(sql_all_boroughs)["borough"].tolist()
