@@ -235,7 +235,7 @@ if day:
 		AND L.lid = LAM.lid 
 		AND LAM.mid = HE.mid 
 		AND HE.meid  = ME.meid;"""
-		AND CAST(FS.starttime as DATE) = {day};"""
+	
 		
 	try:
 		dayout = query_db(sql_film_and_exhibit)
