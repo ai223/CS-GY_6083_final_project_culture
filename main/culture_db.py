@@ -75,7 +75,7 @@ if table_name:
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
     boroughs = query_db(sql_all_boroughs)["borough"].tolist()
-    borough = st.selectbox("Choose a borough", boroughs)
+    borough = st.selectbox("Choose a borough", boroughs,1)
 except:
     st.write("Sorry! Something went wrong with your query, please try again.")
 
@@ -173,16 +173,18 @@ if artwork_stem:
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
 
 sql_all_actors = "SELECT name FROM culture.FilmActor;"
+sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
 	actors = query_db(sql_all_actors)["name"].tolist()
 	actor = st.selectbox("Choose an Actor", actors)
+	boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+	borough = st.selectbox("Choose a borough", boroughs,2)
 except:
 	st.write("Sorry! Something went wrong with your query, please try again.")
 
 
-#sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
-#boroughs = query_db(sql_all_boroughs)["borough"].tolist()
-#borough1 = st.selectbox("Choose a borough", boroughs)
+
+
 
 
 if actor:
@@ -191,12 +193,14 @@ if actor:
 		SELECT FT.name
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_actor HA, culture.FilmActor FA,
-		culture.has_director_Film F, culture.showing_at SA
+		culture.has_director_Film F
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
 		AND F.fid = SA.fid
-		AND SA.ftid= FT.ftid;"""
+		AND SA.ftid= FT.ftid
+		AND FT.lid = L.lid
+		AND L.borough = {borough}"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
