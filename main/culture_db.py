@@ -46,7 +46,7 @@ def query_db(sql: str):
 
     return df
 
-"## New York City Culture Finder and Event Planner!"
+"## New York City Culture Finder and Event Planner for Art and Films!"
 
 "## Read tables"
 
@@ -251,8 +251,8 @@ if director and genre and borough3:
 
 
 
-"""## Query 6: Find all ACTOR/Director Teams thhat are from This Country, and count how many moviess they did together. For the 
-purpose of this query, we are going to consider an Actor/Director team,
+"""## Query 6: Find all Director/Actor teams that are from THIS COUNTRY, and count how many films they made together. 
+For the purpose of this query, we are going to consider an Actor/Director team,
 as an Actor and Director who worked on 2 or more movies together. """
 
 sql_all_countries = "SELECT DISTINCT(country) FROM culture.has_director_Film;"
