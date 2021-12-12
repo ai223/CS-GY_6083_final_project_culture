@@ -193,7 +193,7 @@ if actor and borough:
 		SELECT FT.name
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_actor HA, culture.FilmActor FA,
-		culture.has_director_Film F,culture.showing_at SA
+		culture.has_director_Film F,culture.showing_at SA,culture.Location L
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
