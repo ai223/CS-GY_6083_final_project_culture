@@ -171,7 +171,7 @@ if artwork_stem:
 
 
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH),
-		Along with the name of the film he/she stars in, and showtime information, including room number
+		Along with the name of the film, and showtime information, including room number
 		and ticket price"""
 
 sql_all_actors = "SELECT name FROM culture.FilmActor;"
@@ -188,7 +188,7 @@ except:
 if actor and borough:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT FT.name Theatre, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
+		SELECT FT.name Theatre,F.name Title, FS.starttime When, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_actor HA, culture.FilmActor FA,
 		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
