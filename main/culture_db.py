@@ -215,7 +215,7 @@ if actor and borough:
 
 sql_all_days = "SELECT DATE(starttime) FROM culture.FilmScreening;"
 try:
-	days = query_db(sql_all_days)["starttime"].tolist()
+	days = query_db(sql_all_days)["DATE(starttime)"].tolist()
 	day = st.selectbox("Choose a day!", days)
 
 except:
