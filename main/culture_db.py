@@ -228,7 +228,8 @@ if day:
 	sql_film_and_exhibit = f"""
 	SELECT FT.name theater, F.name film, 
 	       FS.starttime, FS.roomnum theatre_room,
-	       LAM.name museum, ME.name exhibit
+	       LAM.name museum, ME.name exhibit,
+	       L1.borough
 	FROM culture.has_location_FilmTheater FT,
 	     culture.showing_at SA,
 	     culture.has_director_Film F,
