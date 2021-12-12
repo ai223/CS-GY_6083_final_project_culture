@@ -255,7 +255,7 @@ if director and genre and borough3:
 purpose of this query, we are going to consider an Actor/Director team,
 as an Actor and Director who worked on 2 or more movies together. """
 
-sql_all_countries = "SELECT country FROM culture.has_director_Film;"
+sql_all_countries = "SELECT DISTINCT(country) FROM culture.has_director_Film;"
 
 try:
 	countries = query_db(sql_all_countries)["country"].tolist()
