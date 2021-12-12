@@ -221,23 +221,34 @@ try:
 except:
 	st.write("Sorry! Something went wrong with your query, please try againnnnnnnn.")
 
+
 if day:
 	f"Display the result"
+
 	sql_film_and_exhibit = f"""
-		SELECT FT.name Theatre,F.name Film, FS.starttime , FS.RoomNum TheaterRoom, LAM.name Museum , ME.name Exhibit
-		FROM culture.has_location_FilmTheater FT,  
-		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS,
-		culture.has_event HE, culture.MueseumEvent ME,culture.located_at_Museum LAM
-		WHERE F.fid = SA.fid
-		AND SA.fsid = FS.fsid
-		AND SA.ftid = FT.ftid
-		AND FT.lid = L.lid
-		AND L.lid = LAM.lid 
-		AND LAM.mid = HE.mid 
-		AND HE.meid  = ME.meid
-		AND CAST(FS.starttime as DATE) = '{day}'
-		AND '{day}' >= CAST(ME.startDate AS DATE)
-        AND '{day}' <= CAST(ME.endDate AS DATE);"""
+	SELECT FT.name theater, F.name film, 
+	       FS.starttime, FS.roomnum theatre_room,
+	       LAM.name museum, ME.name exhibit
+	FROM culture.has_location_FilmTheater FT,
+	     culture.showing_at SA,
+	     culture.has_director_Film F,
+	     culture.FilmScreening FS,
+	     culture.MuseumEvent ME,
+	     culture.has_event HE,
+	     culture.located_at_Museum LAM,
+	     culture.Location L1, 
+	     culture.Location L2
+	WHERE FT.ftid = SA.ftid
+	AND F.fid = SA.fid
+	AND SA.fsid = FS.fsid
+	AND CAST(FS.starttime AS DATE) = '{day}'
+	AND '{day}' >= ME.startDate
+	AND '{day}' <= ME.endDate
+	AND ME.meid = HE.meid
+	AND HE.mid = LAM.mid
+	AND FT.lid = L1.lid
+	AND LAM.lid = L2.lid
+	AND L1.borough = L2.borough;"""
 	
 	try:
 		dayout = query_db(sql_film_and_exhibit)
