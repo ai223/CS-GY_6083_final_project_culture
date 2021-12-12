@@ -6,7 +6,7 @@ import datetime
 import time
 from dateutil.relativedelta import relativedelta
 
-"###New York City Culture Finder/Event Planner/ NYC Art Nerds Lookup"
+"## New York City Culture Finder/Event Planner/ NYC Art Nerds Lookup"
 
 
 @st.cache
@@ -188,7 +188,7 @@ except:
 if actor and borough:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT FT.name Theatre,F.name, FS.starttime When, FS.roomNum, FT.ticketPrice TicketPrice
+		SELECT FT.name Theatre,FS.starttime When, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_actor HA, culture.FilmActor FA,
 		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
@@ -196,7 +196,7 @@ if actor and borough:
 		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
 		AND F.fid = SA.fid
-		AND SA.ftid= FT.ftid
+		AND SA.ftid = FT.ftid
 		AND SA.fsid = FS.fsid
 		AND FT.lid = L.lid
 		AND L.borough = '{borough2}'"""
