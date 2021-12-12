@@ -214,9 +214,9 @@ sql_all_directors = "SELECT name FROM culture.filmdirector;"
 sql_all_genres = "SELECT DISTINCT(genre) FROM culture.has_director_Film;"
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
 try:
-	directors= query_db(sql_all_actors)["name"].tolist()
+	directors= query_db(sql_all_directors)["name"].tolist()
 	director = st.selectbox("Choose a Director", directors)
-	genres = query_db(sql_all_actors)["genre"].tolist()
+	genres = query_db(sql_all_genres)["genre"].tolist()
 	genre = st.selectbox("Choose a genre!", genres)
 	boroughs = query_db(sql_all_boroughs)["borough"].tolist()
 	borough3 = st.selectbox("Choose a borough", boroughs,3)
@@ -226,7 +226,7 @@ except:
 
 if director and genre and borough3:
 	f"Display the result"
-	sql_actor_and_borough = f"""
+	sql_director_and_borough_and_genre = f"""
 		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
 		culture.filmdirectpr FD,
@@ -241,8 +241,8 @@ if director and genre and borough3:
 		AND F.genre = '{genre};'"""
 
 	try:
-		actorborough = query_db(sql_actor_and_borough)
-		st.dataframe(actorborough)
+		directorboroughgenre = query_db(sql_director_and_borough_and_genre)
+		st.dataframe(directorboroughgenre)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
