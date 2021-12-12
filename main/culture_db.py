@@ -230,7 +230,10 @@ if director and genre and borough3:
 		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
 		culture.filmdirectpr FD,
-		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
+		culture.has_director_Film F,
+		culture.showing_at SA,
+		culture.Location L,
+		culture.FilmScreening FS
 		WHERE FD.name = '{director}'
 		AND FD.fdid = F.fdid
 		AND F.fid = SA.fid
@@ -238,7 +241,7 @@ if director and genre and borough3:
 		AND SA.fsid = FS.fsid
 		AND FT.lid = L.lid
 		AND L.borough = '{borough3}'
-		AND F.genre = '{genre}';"""
+		AND F.genre = '{genre}'"""
 
 	try:
 		directorboroughgenre = query_db(sql_director_and_borough_and_genre)
@@ -248,9 +251,7 @@ if director and genre and borough3:
 
 
 
-
-
-"""## Query 6: Find all ACTOR/Director Teams, and count how many moviess they did together. For the 
+"""## Query 6: Find all ACTOR/Director Teams thhat are from This Country, and count how many moviess they did together. For the 
 purpose of this query, we are going to consider an Actor/Director team,
 as an Actor and Director who worked on 2 or more movies together. """
 
