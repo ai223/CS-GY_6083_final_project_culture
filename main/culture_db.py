@@ -227,25 +227,25 @@ if day:
 	sql_film_and_exhibit = f"""
 
 	SELECT FT.name Theatre,F.name Film, FS.starttime dateAndTime, FS.RoomNum TheaterRoom, LAM.name Museum , ME.name Exhibit
-		FROM culture.has_location_FilmTheater FT,  
-		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
-        culture.has_event HE, culture.MueseumEvent ME,culture.located_at_Museum LAM
-		WHERE F.fid = SA.fid
-		AND SA.fsid = FS.fsid
-		AND SA.ftid = FT.ftid
-		AND FT.lid = L.lid
-		AND L.lid = LAM.lid 
-		AND LAM.mid = HE.mid 
-		AND HE.meid  = ME.meid
-		AND DATE(FS.starttime) = '{day}'
-		AND DATE(FS.starttime) >= DATE(ME.startDate)
-		AND FS.starttime <= ME.endDate;"""
+	FROM culture.has_location_FilmTheater FT,  
+	culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
+    culture.has_event HE, culture.MueseumEvent ME,culture.located_at_Museum LAM
+	WHERE F.fid = SA.fid
+	AND SA.fsid = FS.fsid
+	AND SA.ftid = FT.ftid
+	AND FT.lid = L.lid
+	AND L.lid = LAM.lid 
+	AND LAM.mid = HE.mid 
+	AND HE.meid  = ME.meid
+	AND DATE(FS.starttime) = '{day}'
+	AND DATE(FS.starttime) >= DATE(ME.startDate)
+	AND FS.starttime <= ME.endDate;"""
 
-		try:
-			dayout = query_db(sql_film_and_exhibit)
-			st.dataframe(dayout)
-		except:
-			st.write("Sorry! Something went wrong with your query, please try again.")
+	try:
+		dayout = query_db(sql_film_and_exhibit)
+		st.dataframe(dayout)
+	except:
+		st.write("Sorry! Something went wrong with your query, please try again.")
 
 
 
