@@ -6,7 +6,7 @@ import datetime
 import time
 from dateutil.relativedelta import relativedelta
 
-"# Demo: Streamlit + Postgres"
+"#New York City Culture Finder/Event Planner/ NYC Art Nerds Lookup"
 
 
 @st.cache
@@ -170,7 +170,9 @@ if artwork_stem:
 ##"## Query4: Find all theaters playing a movie by THIS ACTOR, by THIS GENRE, and In This BOROUGH"
 
 
-"""## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
+"""## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH),
+		Along with the name of the film he/she stars in, and showtime information, including room number
+		and ticket price"""
 
 sql_all_actors = "SELECT name FROM culture.FilmActor;"
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
@@ -180,25 +182,22 @@ try:
 	boroughs = query_db(sql_all_boroughs)["borough"].tolist()
 	borough2 = st.selectbox("Choose a borough", boroughs,2)
 except:
-	st.write("Sorry! Something went wrong with your query, please try againnnnn.")
-
-
-
-
+	st.write("Sorry! Something went wrong with your query, please try again.")
 
 
 if actor and borough:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT FT.name
+		SELECT FT.name Theatre, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_actor HA, culture.FilmActor FA,
-		culture.has_director_Film F,culture.showing_at SA,culture.Location L
+		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
 		AND F.fid = SA.fid
 		AND SA.ftid= FT.ftid
+		AND SA.fsid = FS.fsid
 		AND FT.lid = L.lid
 		AND L.borough = '{borough2}'"""
 
