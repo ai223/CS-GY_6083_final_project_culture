@@ -216,6 +216,7 @@ and exhibit that is happening at a Museum on the same day!"""
 
 sql_all_days = "SELECT starttime FROM culture.FilmScreening;"
 try:
+	print("did we get here?")
 	days = query_db(sql_all_days)["days"].tolist()
 	day = st.selectbox("Choose a day!", days)
 
