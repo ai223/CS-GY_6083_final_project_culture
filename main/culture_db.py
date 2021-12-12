@@ -172,7 +172,7 @@ if artwork_stem:
 
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH)"""
 
-sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
+sql_all_actors = "SELECT name FROM culture.FilmActor;"
 try:
 	actors = query_db(sql_all_actors)["name"].tolist()
 	actor = st.selectbox("Choose an Actor", actors)
@@ -188,15 +188,12 @@ except:
 if actor:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT FT.name
-		FROM has_location_FilmTheater FT,  
-		has_actor HA,FilmActor FA,
-		has_director_Film F,showing_at SA
+		SELECT F.name
+		FROM has_actor HA, FilmActor FA,
+		has_director_Film F
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
-		AND HA.fid = F.fid
-		AND F.fid = SA.fid
-		AND SA.ftid= FT.ftid;"""
+		AND HA.fid = F.fid;"""
 
 	try:
 		actorborough = query_db(sql_actor_and_borough)
@@ -210,3 +207,17 @@ if actor:
 
 
 
+'''
+if actor:
+	f"Display the result"
+	sql_actor_and_borough = f"""
+		SELECT FT.name
+		FROM has_location_FilmTheater FT,  
+		has_actor HA,FilmActor FA,
+		has_director_Film F,showing_at SA
+		WHERE FA.name = '{actor}'
+		AND FA.faid = HA.faid
+		AND HA.fid = F.fid
+		AND F.fid = SA.fid
+		AND SA.ftid= FT.ftid;"""
+'''
