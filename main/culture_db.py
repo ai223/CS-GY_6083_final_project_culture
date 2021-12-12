@@ -221,7 +221,7 @@ try:
 	day = st.selectbox("Choose a day!", days)
 
 except:
-	st.write("Sorry! Something went wrong with your query, please try again.")
+	st.write("Sorry! Something went wrong with your query, please try againnnnnnnn.")
 
 if day:
 	f"Display the result"
