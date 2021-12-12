@@ -176,24 +176,22 @@ sql_all_actors = "SELECT DISTINCT(name) FROM culture.FilmActor;"
 actors = query_db(sql_all_actors)["name"].tolist()
 actor = st.selectbox("Choose an Actor", actors)
 
-sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
-boroughs = query_db(sql_all_boroughs)["borough"].tolist()
-borough1 = st.selectbox("Choose a borough", boroughs)
+#sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
+#boroughs = query_db(sql_all_boroughs)["borough"].tolist()
+#borough1 = st.selectbox("Choose a borough", boroughs)
 
 
-if borough and actor:
+if actor:
 	f"Display the result"
 	sql_actor_and_borough = f"""
 		SELECT FT.name
-		FROM has_location_FilmTheater FT, Location L, 
+		FROM has_location_FilmTheater FT,  
 		has_actor HA,FilmActor FA,
 		has_director_Film F,showing_at SA
 		WHERE faid.FA = faid.HA
 		AND fid.HA = fid.F
 		AND fid.F = fid.SA
 		AND ftid.SA = FT.ftid
-		AND FT.lid = L.lid
-		AND L.borough = {borough1}
 		AND FA.name = {actor};"""
 
 	try:
