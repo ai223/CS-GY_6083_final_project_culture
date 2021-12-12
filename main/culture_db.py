@@ -46,7 +46,7 @@ def query_db(sql: str):
 
     return df
 
-"###New York City Culture Finder and Event Planner!"
+"## New York City Culture Finder and Event Planner!"
 
 "## Read tables"
 
