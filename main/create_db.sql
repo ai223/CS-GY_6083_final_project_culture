@@ -71,7 +71,7 @@ create table culture.created_by(
 create table culture.MuseumEvent(
 	meid		integer		primary key,
 	url		varchar(128),
-	name		varchar(64),
+	name		varchar(128),
 	startDate	timestamp,
 	endDate	timestamp,
 	price		decimal,
