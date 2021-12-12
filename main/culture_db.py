@@ -224,7 +224,7 @@ except:
 	st.write("Sorry! Something went wrong with your query, please try again.")
 
 
-if director and genres and borough3:
+if director and genre and borough3:
 	f"Display the result"
 	sql_actor_and_borough = f"""
 		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice
