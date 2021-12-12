@@ -224,7 +224,7 @@ except:
 if day:
 	f"Display the result"
 	sql_film_and_exhibit = f"""
-		SELECT FT.name Theatre,F.name Film, FS.starttime dateAndTime, FS.RoomNum TheaterRoom, LAM.name Museum , ME.name Exhibit
+		SELECT FT.name Theatre,F.name Film, CAST(FS.starttime AS DATE), FS.RoomNum TheaterRoom, LAM.name Museum , ME.name Exhibit
 		FROM culture.has_location_FilmTheater FT,  
 		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS,
 		culture.has_event HE, culture.MueseumEvent ME,culture.located_at_Museum LAM
