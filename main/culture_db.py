@@ -6,7 +6,6 @@ import datetime
 import time
 from dateutil.relativedelta import relativedelta
 
-"#New York City Culture Finder/Event Planner/ NYC Art Nerds Lookup"
 
 
 @st.cache
@@ -47,6 +46,7 @@ def query_db(sql: str):
 
     return df
 
+"#New York City Culture Finder and Event Planner!"
 
 "## Read tables"
 
