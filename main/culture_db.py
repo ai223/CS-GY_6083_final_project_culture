@@ -48,28 +48,6 @@ def query_db(sql: str):
 
 "## NYC Culture Finder & Event Planner (for Art and Films!)"
 
-"## Read tables"
-
-sql_all_table_names = "SELECT relname FROM pg_class WHERE relkind='r' AND relname !~ '^(pg_|sql_)';"
-try:
-    all_table_names = query_db(sql_all_table_names)["relname"].tolist()
-    table_name = st.selectbox("Choose a table", all_table_names)
-except:
-    st.write("Sorry! Something went wrong with your query, please try again.")
-
-if table_name:
-    f"Display the table"
-
-    sql_table = f"SELECT * FROM culture.{table_name};"
-    try:
-        df = query_db(sql_table)
-        st.dataframe(df)
-    except:
-        st.write(
-            "Sorry! Something went wrong with your query, please try again."
-        )
-
-
 "## Query 1: Find all museums per borough with their number of special exhibitions over the past year"
 
 sql_all_boroughs = "SELECT DISTINCT(borough) FROM culture.Location;"
