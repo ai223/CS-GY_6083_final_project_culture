@@ -132,7 +132,7 @@ if artwork_stem:
 		     culture.created_by CB,
 		     culture.located_at_Museum M,
 		     culture.Location L
-		WHERE MO.name LIKE '{artwork_stem}%'
+		WHERE MO.name ILIKE '{artwork_stem}%'
 		AND MO.moid = CB.moid
 		AND CB.mocid = MOC.mocid
 		AND MO.mid = M.mid
