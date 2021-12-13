@@ -6,7 +6,7 @@ fid,name,year,genre,country,fdid
 5,Jules and Jim,1962,new wave,France,2
 6,Shoot the Piano Player,1960,new wave,France,2
 7,The Graduate,1967,drama,USA,3
-8,Catch-22, 1970,comedy,USA,3
+8,Catch-22,1970,comedy,USA,3
 9,The Birdcage,1996,comedy,USA,3
 10,Rear Window,1954,thriller,USA,4
 11,Psycho,1960,horror,USA,4
@@ -38,7 +38,7 @@ fid,name,year,genre,country,fdid
 37,Blow Up,1966,crime,Great Britain,14
 38,Last Tango in Paris,1972,drama,France,15
 39,Strike,1925,silent film,Russia,16
-40,The Prestige,2006,sci-fii,USA,17
+40,The Prestige,2006,sci-fi,USA,17
 41,Memento,2000,drama,USA,17
 42,The Player,1992,drama,USA,18
 43,Touch of Evil,1958,film noir,USA,19
