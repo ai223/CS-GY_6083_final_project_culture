@@ -145,9 +145,6 @@ if artwork_stem:
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
-##"## Query4: Find all theaters playing a movie by THIS ACTOR, by THIS GENRE, and In This BOROUGH"
-
-
 """## Query 4:Find all theaters playing a film starring(PICK YOUR ACTOR), playing in(PICK YOUR BOROUGH),
 		Along with the name of the film, and showtime information, including room number
 		and ticket price"""
