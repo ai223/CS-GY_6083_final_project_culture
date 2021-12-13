@@ -166,10 +166,14 @@ except:
 if actor and borough:
 	f"Display the result"
 	sql_actor_and_borough = f"""
-		SELECT FT.name Theatre,F.name Title, FS.starttime dateAndTime, FS.roomNum, FT.ticketPrice TicketPrice($)
+		SELECT FT.name Theatre, F.name Title, FS.starttime dateAndTime, 
+		       FS.roomNum, FT.ticketPrice ticket_price
 		FROM culture.has_location_FilmTheater FT,  
-		culture.has_actor HA, culture.FilmActor FA,
-		culture.has_director_Film F,culture.showing_at SA,culture.Location L,culture.FilmScreening FS
+		     culture.has_actor HA, culture.FilmActor FA,
+		     culture.has_director_Film F,
+		     culture.showing_at SA,
+		     culture.Location L,
+		     culture.FilmScreening FS
 		WHERE FA.name = '{actor}'
 		AND FA.faid = HA.faid
 		AND HA.fid = F.fid
