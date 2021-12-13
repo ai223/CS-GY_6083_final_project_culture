@@ -116,7 +116,7 @@ if creator:
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
 
-f"""## Query 3: Allow a user to search for artworks starting with the search term displaying the piece, the creator of the piece, the museum where it can be found and other data"""
+f"""## Query 3: Allow a user to search for artworks by name (or beginning stem of the name), displaying the artwork alongside other information such as the creator of the piece, the museum where it can be found, etc."""
 
 artwork_stem = st.text_input('Input your sentence here:') 
 
@@ -310,11 +310,3 @@ if day:
 		st.dataframe(dayout)
 	except:
 		st.write("Sorry! Something went wrong with your query, please try again.")
-
-
-
-
-
-   
-
-
